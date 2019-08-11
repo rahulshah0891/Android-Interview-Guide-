@@ -142,7 +142,15 @@ The design patterns are divided into 3 categories:
        - Interfaces need to be defined and implemented to communicate between View-Presenter and Presenter-Model.
        - The View and Model classes can’t have a reference of one another.
 
-### Which Design Patterns are used by Android Components?
-   - **Broadcast Receiver** uses Observer Pattern.
+### 2) Which Design Patterns are used by Android Components?
+   - **Broadcast Receiver, RxJava, Binder** uses Observer Pattern.
+   - **View and ViewGroup** uses Composite Design pattern.
+   - **Retrofit and Media Framework** uses Facade pattern.
+   - **ViewHolder** uses Singleton pattern.
+   - **Intent** uses Factory pattern.
+   - **RecyclerView.Adapter** uses Adapter pattern.
+   - **AlertDialog.Builder** uses Builder pattern.
+   - **Dagger2** uses Dependency Injection pattern.
+   - **EventBus** uses Command Pattern.
     
 
