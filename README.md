@@ -127,5 +127,18 @@ The design patterns are divided into 3 categories:
          ```
        - In short, you define Observable objects that will emit values. These values can emit all at once, as a continuous stream, or at any rate and duration.Subscriber objects will listen for these values and react to them as they arrive. For example, you can open a subscription when you make an API call, listen for the response from the server, and react accordingly.
      - **MVVM**
+       - MVVM stands for Model, View, ViewModel.
+         - **Model** : This holds the data of the application. It cannot directly talk to the View. Generally, it’s recommended to expose the data to the ViewModel through Observables.
+         - **View** : It represents the UI of the application devoid of any Application Logic. It observes the ViewModel.
+         - **ViewModel** : It acts as a link between the Model and the View. It’s responsible for transforming the data from the Model. It provides data streams to the View. It also uses hooks or callbacks to update the View. It’ll ask for the data from the Model.
      - **MVP**
+       - MVP devides our application into 3 layers namely Model, View and Presenter.
+         - **Model** : This handles the data part of our application.
+         - **View** : This is responsible for laying out views with the relevant data as instructed by the Presenter.
+         - **Presenter** - It acts as a bridge that connects a Model and a View.
+       - Activity, Fragment and a CustomView act as the View part of the application.
+       - The Presenter is responsible for listening to user interactions (on the View) and model updates (database, APIs) as well as updating the Model and the View.
+       - Generally, a View and Presenter are in a one to one relationship. One Presenter class manages one View at a time.
+       - Interfaces need to be defined and implemented to communicate between View-Presenter and Presenter-Model.
+       - The View and Model classes can’t have a reference of one another.
 
