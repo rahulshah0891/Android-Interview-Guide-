@@ -1,10 +1,10 @@
 # Android-Interview-Guide
 A Guide with all the questions related to Android Interview.
 
-### Design Patterns
+### 1) Design Patterns
 
 The design patterns are divided into 3 categories:
-  1. **Creational** : Focuses on how you are going to create objects.
+  - **Creational** : Focuses on how you are going to create objects.
      - **Builder** 
        - Builder pattern simplifies object creation in very clean and readable way.
        - It helps creating Model(POJO) classes with many parameters in easier and efficient way.
@@ -83,7 +83,7 @@ The design patterns are divided into 3 categories:
        - Dependency injection pattern provides all the objects needed by a class to instantiate the objects without using any constructor or customizing an object. 
        - Dagger2 is the most common library used to provide dependency injection in Android.
   
-  2. **Structural** : Focuses on how the classes inherit from each other and how they are composed from other classes.
+  - **Structural** : Focuses on how the classes inherit from each other and how they are composed from other classes.
      - **Composite**
        - Composite pattern is a partitioning design pattern and describes group of objects that is treated as single instance of same type of object.
        - The intent of composite is to compose objects into a tree structures which represent part or whole heirarchies.  
@@ -109,7 +109,7 @@ The design patterns are divided into 3 categories:
        - It allows reusability of existing functionality. 
        - eg: A ```RecyclerView``` is same component used among all the Android apps. But we can create different ```RecyclerView.Adapter``` classes according to our need to fit into ```RecyclerView``` object. 
   
-  3. **Behavioral** : Focuses on how the coordination between objects is done. The interaction between objects should be in such a way that they can easiy comunicate with each other and are not tightly coupled.
+  - **Behavioral** : Focuses on how the coordination between objects is done. The interaction between objects should be in such a way that they can easiy comunicate with each other and are not tightly coupled.
      - **Command**
        - A Command pattern lets you issue a request without knowing the receiver. You encapsulate request as an object and send it off; deciding how to complete the request is different mechanism. 
        - It separates the object that invokes the operation from the object that actually performs the operation.
@@ -141,4 +141,8 @@ The design patterns are divided into 3 categories:
        - Generally, a View and Presenter are in a one to one relationship. One Presenter class manages one View at a time.
        - Interfaces need to be defined and implemented to communicate between View-Presenter and Presenter-Model.
        - The View and Model classes can’t have a reference of one another.
+
+### Which Design Patterns are used by Android Components?
+   - **Broadcast Receiver** uses Observer Pattern.
+    
 
