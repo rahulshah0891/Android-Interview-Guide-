@@ -11,7 +11,45 @@ The design patterns are divided into 3 categories:
        - We can make some of the fields optional and some required and we dont have to maintain any order.
        - Commonly used Builder pattern in Android is ```AlertDialog.Builder()```.
        - We can create our own Builder class as shown below.
-       
+          ``` 
+            public class Person {
+                private String firstName;
+                private String lastName;
+                private int age;
+
+                private Person(Builder builder) {
+                    this.firstName = builder.firstName;
+                    this.lastName = builder.lastName;
+                    this.age = builder.age;
+                }
+
+                static class Builder{
+                    private String firstName;
+                    private String lastName;
+                    private int age;
+
+                    public Builder setFirstName(String firstName) {
+                        this.firstName = firstName;
+                        return this;
+                    }
+
+                    public Builder setLastName(String lastName) {
+                        this.lastName = lastName;
+                        return this;
+                    }
+
+                    public Builder setAge(int age) {
+                        this.age = age;
+                        return this;
+                    }
+
+                    public Person create(){
+                        return new Person(this);
+                    }
+                }
+            }
+
+          ```
      - **Singleton**
      - **Factory**
      - **Dependency Injection**
