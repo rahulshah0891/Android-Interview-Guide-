@@ -59,8 +59,29 @@ The design patterns are divided into 3 categories:
                             .create();
           ```                  
      - **Singleton**
-     - **Factory**
+       - Singleton pattern specifies that only single instance of a class should exist with a global point of access. In Kotlin we can create singleton class using ```object```.
+       
+       - eg:
+       ```
+        class Singleton 
+        { 
+            private static Singleton obj; 
+
+            // private constructor to force use of 
+            // getInstance() to create Singleton object 
+            private Singleton() {} 
+
+            public static Singleton getInstance() 
+            { 
+                if (obj==null) 
+                    obj = new Singleton(); 
+                return obj; 
+            } 
+        } 
+       ```
      - **Dependency Injection**
+       - Dependency injection pattern provides all the objects needed by a class to instantiate the objects without using any constructor or customizing an object. 
+       - Dagger2 is the most common library used to provide dependency injection in Android.
   
   2. **Structural** : Focuses on how the classes inherit from each other and how they are composed from other classes.
      - **Composite**
