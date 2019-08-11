@@ -6,6 +6,12 @@ A Guide with all the questions related to Android Interview.
 The design patterns are divided into 3 categories:
   1. **Creational** : Focuses on how you are going to create objects.
      - **Builder** 
+       - Builder pattern simplifies object creation in very clean and readable way.
+       - It helps creating Model(POJO) classes with many parameters in easier and efficient way.
+       - We can make some of the fields optional and some required and we dont have to maintain any order.
+       - Commonly used Builder pattern in Android is ```AlertDialog.Builder()```.
+       - We can create our own Builder class as shown below.
+       
      - **Singleton**
      - **Factory**
      - **Dependency Injection**
@@ -20,3 +26,4 @@ The design patterns are divided into 3 categories:
      - **Observer**
      - **MVVM**
      - **MVP**
+
