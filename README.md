@@ -91,7 +91,23 @@ The design patterns are divided into 3 categories:
          1) Composite – Composite means it can have other objects below it.
          2) leaf – leaf means it has no objects below it.
      - **Facade**
+       - Facade pattern describes a higher level interface that makes sub-systems easier to use. It hides the complexity os the sub system from the client.
+       - Retrofit library helps us to create Facade pattern into our applications.
+       - We create an interface to provide API data to our client classes as shown below.
+         ```
+         interface ShopsApi {
+            @GET("shops")
+            fun listShops(): Call<List<Shop>>
+         }
+         ```
+       - The client simply needs to call listShops() to receive a list of Shop objects in the callback. 
+       - We can o all the customizations underneath without affecting the client. We can add a customized JSon Deserializer in our retrofit object and our Activity will have no clue about underlying process. 
+       - The less each object knows about what’s going on behind the scenes, the easier it will be for Future You to manage changes in the app. This pattern can be used in a lot of other contexts; Retrofit is only one mechanism among many.
      - **Adapter**
+       - Adapter pattern converts the interface of a class into another interface the client wants. The adapter pattern in known as a wrapper.
+       - It allows two or more incompatible obejcts to interact. 
+       - It allows reusability of existing functionality. 
+       - eg: A ```RecyclerView``` is same component used among all the Android apps. But we can create different ```RecyclerView.Adapter``` classes according to our need to fit into ```RecyclerView``` object. 
   
   3. **Behavioral** : Focuses on how the coordination between objects is done. The interaction between objects should be in such a way that they can easiy comunicate with each other and are not tightly coupled.
      - **Command**
