@@ -85,6 +85,11 @@ The design patterns are divided into 3 categories:
   
   2. **Structural** : Focuses on how the classes inherit from each other and how they are composed from other classes.
      - **Composite**
+       - Composite pattern is a partitioning design pattern and describes group of objects that is treated as single instance of same type of object.
+       - The intent of composite is to compose objects into a tree structures which represent part or whole heirarchies.  
+       - eg: In an organization, It have general managers and under general managers, there can be managers and under managers there can be developers. Now you can set a tree structure and ask each node to perform common operation like getSalary(). Composite design pattern treats each node in two ways:
+         1) Composite – Composite means it can have other objects below it.
+         2) leaf – leaf means it has no objects below it.
      - **Facade**
      - **Adapter**
   
