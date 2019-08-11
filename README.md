@@ -50,6 +50,14 @@ The design patterns are divided into 3 categories:
             }
 
           ```
+          After that we can use it as shown below.
+          ``` 
+          Person person = new Person.Builder()
+                            .setFirstName("John")
+                            .setLastName("Wick")
+                            .setAge(42)
+                            .create();
+          ```                  
      - **Singleton**
      - **Factory**
      - **Dependency Injection**
