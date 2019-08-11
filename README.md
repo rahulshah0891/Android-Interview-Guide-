@@ -111,7 +111,21 @@ The design patterns are divided into 3 categories:
   
   3. **Behavioral** : Focuses on how the coordination between objects is done. The interaction between objects should be in such a way that they can easiy comunicate with each other and are not tightly coupled.
      - **Command**
+       - A Command pattern lets you issue a request without knowing the receiver. You encapsulate request as an object and send it off; deciding how to complete the request is different mechanism. 
+       - It separates the object that invokes the operation from the object that actually performs the operation.
+       - EventBus is an Android libray that follows this pattern. 
      - **Observer**
+       - The Observer Pattern defines a one to many dependency between objects so that one object changes state, all of its dependents are notified and updated automatically.
+       - One to many dependency is between Subject(One) and Observer(Many).
+       - The ```RxAndroid``` library in Android lets us implement Observer pattern. 
+       - eg : 
+         ```
+         apiService.getData(someData)
+          .subscribeOn(Schedulers.io())
+          .observeOn(AndroidSchedulers.mainThread())
+          .subscribe (/* an Observer */)
+         ```
+       - In short, you define Observable objects that will emit values. These values can emit all at once, as a continuous stream, or at any rate and duration.Subscriber objects will listen for these values and react to them as they arrive. For example, you can open a subscription when you make an API call, listen for the response from the server, and react accordingly.
      - **MVVM**
      - **MVP**
 
