@@ -165,3 +165,7 @@ The design patterns are divided into 3 categories:
 ### 4) What is Application class in Android?
    - Application class is a base class of Android app containing components like Activities and Services. Application or its sub classes are instantiated before all the activities or any other application objects have been created in Android app.
    - We need to extend a class with ```Application``` and mention that class in ```AndroidManifest.xml``` file using ```android:name=".MyCustomApplication"``` property in the ```application``` tag if we want to create Application class in our App.
+   
+### 5) What is StrictMode in Android?
+   - ```StrictMode``` is a developer tool provided by Android which detects things you might be doing by accident and brings them to your attention so you can fix them.
+   - ```StrictMode``` is used to catch accidental disk or network access.
