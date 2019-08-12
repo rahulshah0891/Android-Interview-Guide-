@@ -155,4 +155,9 @@ The design patterns are divided into 3 categories:
    - **Dagger2** uses Dependency Injection pattern.
    - **EventBus** uses Command Pattern.
     
-
+### 3) ART vs DVM. What is used by Android?
+   - Since Android Lollipop, Google has replaced DVM(Dalvik Virtual Machine) with ART(Android Run Time).
+   - Dalvik uses **Just-In-Time** approach in which the compilation was done on demand. All the dex files were converted into their native representation when it was needed. But ART uses **Ahead-Of-Time** approach in which dex files where converted before they were demanded. This massively improves battery life of any android device.
+   - For eg. In case of DVM, whenever you touch an app icon to open it, the necessary dex files gets converted into their equivalent native codes. The app will only start working when this compilation is done. So, the app is unresponsive until this finishes.Moreover, this process is repeated every single time you open an app wasting CPU cycles and valuable battery juice. But in case of ART, whenever you install an app, all the dex files gets converted once and for all. So the installation takes some time and the app takes more space than in Dalvik, but the performance is massively improved and battery life is smartly conserved.
+   - The space used by apps being run on ART is much more than that of Dalvik. Like a 20 MB app on Dalvik, takes more than 35 MB on ART. So if you are on a low storage device, then this can be a huge disadvantage for you.
+   - ART is extremely fast and smooth. Apps are very snappy and responsive. Any comparison between Dalvik and ART, will surely make the ART device win by a significant margin.
