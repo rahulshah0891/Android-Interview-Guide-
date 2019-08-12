@@ -1,6 +1,8 @@
 # Android-Interview-Guide
 A Guide with all the questions related to Android Interview.
 
+**Note : Questions are not in order.**
+
 ### 1) Design Patterns
 
 The design patterns are divided into 3 categories:
