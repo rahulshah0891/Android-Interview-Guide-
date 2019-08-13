@@ -168,4 +168,24 @@ The design patterns are divided into 3 categories:
    
 ### 5) What is StrictMode in Android?
    - ```StrictMode``` is a developer tool provided by Android which detects things you might be doing by accident and brings them to your attention so you can fix them.
-   - ```StrictMode``` is used to catch accidental disk or network access.
+   - ```StrictMode``` is used to catch accidental disk or network access on the application’s main thread, where UI operations are received and animations take place. Keeping disk and network operations off the main thread makes for much smoother, more responsive applications. By keeping your application’s main thread responsive, you also prevent ANR dialogs from being shown to users.
+   - Below is the example code to enable ```StrictMode``` which we can add in our ```Application``` or ```Activity```.
+     ```
+     public void onCreate() {
+       if (DEVELOPER_MODE) {
+           StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder()
+                   .detectDiskReads()
+                   .detectDiskWrites()
+                   .detectNetwork()   // or .detectAll() for all detectable problems
+                   .penaltyLog()
+                   .build());
+           StrictMode.setVmPolicy(new StrictMode.VmPolicy.Builder()
+                   .detectLeakedSqlLiteObjects()
+                   .detectLeakedClosableObjects()
+                   .penaltyLog()
+                   .penaltyDeath()
+                   .build());
+       }
+       super.onCreate();
+     }
+     ```
