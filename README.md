@@ -200,3 +200,17 @@ The design patterns are divided into 3 categories:
    - ```setValue``` method must be called from main thread. But if you need to set a value from background thread then ```postValue``` should be used.
    
    
+### 8) What security measures do you follow while creating an Android app?
+   - Use **non-exported Content Providers**. In Android Manifest use ```exported=false``` in provider tag.
+   - Use **signature based Content Providers** if we want to share same Content Provider between 2 of our own apps.
+   - Use **HTTPS protocols** for Network APIs used in our application.
+   - Use **Network Security config** to block clear text traffic.
+   - Store user's data in **Internal storage** in application specific **sandbox folder**. 
+   - Use **Shared Preferences** in private mode.
+   - Use **Cryptography** to store or transfer data. You can use AES or RSA algorithm.
+   - Use **Cipher** database.
+   - **Encrypt and Decrypt** data using Interceptors when making network calls.
+   
+
+   
+   
