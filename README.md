@@ -189,3 +189,14 @@ The design patterns are divided into 3 categories:
        super.onCreate();
      }
      ```
+     
+### 6) What is difference between MutableLiveData and LiveData?
+   - MutableLiveData object can be changed once assigned a value where as LiveData object cannot be changed. MutableLiveData provides two methods ```setValue``` and ```postValue``` to change the object data. MutableLiveData is a child class of LiveData. LiveData object can only be changed indirectly.
+   
+   
+### 7) What is difference between ```setValue``` and ```postValue``` in MutableLiveData?
+   - **```setValue```** sets the value if there are any active observers listening to the MutableLiveData object. This method must be called from Main thread.
+   - **```postValue```** posts a task to the main thread to set the given value. If you called this method multiple times before main thread executed previous tasks, then only last value will be dispatched.
+   - ```setValue``` method must be called from main thread. But if you need to set a value from background thread then ```postValue``` should be used.
+   
+   
